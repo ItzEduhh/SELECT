@@ -1,38 +1,32 @@
 1
-SELECT COUNT(*) total, product_order.id_product, qty
+SELECT id_product, SUM(qty) AS total
 FROM product_order
-GROUP BY id_order
+GROUP BY id_product
 ORDER BY total DESC;
 
 2
-SELECT id_product, id_order, price FROM product_order
-WHERE id_product = 1
+SELECT id_product, price
+FROM product_order
+WHERE id_order = 1
 ORDER BY price DESC;
 
-OU
-
-SELECT id_product, id_order FROM product_order
-WHERE id_product = 1
-ORDER BY id_order DESC;
-
 3
-SELECT id_product, id_order, price
+SELECT id_product, price * qty AS total
 FROM product_order
-WHERE id_product = 2
-ORDER BY id_order DESC;
+WHERE id_order = 2
+ORDER BY total DESC;
 
 4
-SELECT NAME
+SELECT UPPER(name)
 FROM product;
 
 5
-SELECT city.name, state.name
-FROM city, state
-ORDER BY city.name ASC;
+SELECT city.`name`, state.`name` FROM city
+LEFT JOIN state ON city.id_state = state.id
+order BY city.name;
 
 6
-SELECT city.name, state.name
-FROM city, state
-WHERE city.id_state = state.id
-AND city.name LIKE '%iguaçu%'
-ORDER BY city.name ASC;
+SELECT city.`name`, state.`name` FROM city
+LEFT JOIN state ON city.id_state = state.id
+WHERE city.name LIKE "%iguaçu%"
+order BY city.name;
