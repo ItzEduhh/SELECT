@@ -1,0 +1,39 @@
+1
+SELECT COUNT(*) total, product_order.id_product, qty
+FROM product_order
+GROUP BY id_order
+ORDER BY total DESC;
+
+2
+SELECT id_product, id_order, price FROM product_order
+WHERE id_product = 1
+ORDER BY price DESC;
+
+OU
+
+SELECT id_product, id_order FROM product_order
+WHERE id_product = 1
+ORDER BY id_order DESC;
+
+3
+SELECT id_product, id_order, price
+FROM product_order
+WHERE id_product = 2
+ORDER BY id_order DESC;
+
+4
+SELECT NAME
+FROM product
+WHERE name COLLATE utf8mb4_bin REGEXP '^[[:upper:]]';
+
+5
+SELECT city.name, state.name
+FROM city, state
+ORDER BY city.name ASC;
+
+6
+SELECT city.name, state.name
+FROM city, state
+WHERE city.id_state = state.id
+AND city.name LIKE '%iguaçu%'
+ORDER BY city.name ASC;
