@@ -23,8 +23,7 @@ ORDER BY id_order DESC;
 
 4
 SELECT NAME
-FROM product
-WHERE name COLLATE utf8mb4_bin REGEXP '^[[:upper:]]';
+FROM product;
 
 5
 SELECT city.name, state.name
