@@ -1,0 +1,17 @@
+SELECT: Selecionar o que? Qual coluna? Aplico alguma 
+função? Selecionar tudo usa * (asterisco). Separar colunas 
+com , (vírgula)
+
+FROM: Qual tabela?
+
+WHERE: Qual a condição da seleção? >=, =, <=, LIKE 
+“%palavra”, LIKE “%palavra%”, LIKE “palavra%”, coluna 
+BETWEEN valor1 AND valor2.
+
+GROUP BY: Algum agrupamento?
+
+ORDER BY: Qual ordem de exibição dos resultados?
+ Crescente (ASC - Padrão)(Menor para maior)? Decrescente 
+(DESC)(Maior para menor).
+
+LIMIT: Preciso mostra quantos registros
