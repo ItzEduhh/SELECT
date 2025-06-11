@@ -1,0 +1,65 @@
+/*(1)*/
+SELECT first_name, email
+FROM client 
+WHERE email LIKE '%gmail.com'
+order BY first_name;
+
+/*(2)*/
+SELECT gender, COUNT(gender)
+FROM client
+GROUP BY gender
+order BY gender DESC;
+
+/*(3)*/
+SELECT nationality, COUNT(*) AS qty
+FROM client
+GROUP BY nationality
+order BY qty DESC;
+
+/*(4)*/
+SELECT id_state, COUNT(id)
+FROM city
+GROUP BY id_state
+order BY id_state ASC;
+----
+SELECT state.id, COUNT(*)
+FROM state
+JOIN city ON state.id = city.id_state
+GROUP BY state.id
+
+/*(5)*/
+SELECT state.name, COUNT(*)
+FROM state
+JOIN city ON state.id = city.id_state
+GROUP BY state.id
+
+/*(6)*/
+SELECT acronym
+FROM measurement
+WHERE details IS NULL;
+
+/*(7)*/
+SELECT acronym
+FROM measurement
+WHERE details IS NOT NULL;
+
+/*(8)*/
+SELECT id, NAME
+FROM store
+WHERE region = 'S'
+
+/*(9)*/
+SELECT *
+FROM product 
+WHERE codebar LIKE '99%'
+
+/*(10)*/
+SELECT id_product, id_order
+FROM product_order
+JOIN product ON product_order.id_product = product.id
+WHERE id_order = 201;
+
+/*(11)*/
+SELECT *
+FROM client
+WHERE first_name LIKE 'E%';
